@@ -1,12 +1,10 @@
-import React from "react";
-
 import './App.css';
-import Button from './components/Button';
+import AddTask from "./components/AddTask";
 import Header from './components/Header';
 
 const App = () =>
   <div className="container">
       <Header />
-      <Button>Add</Button>
+      <AddTask/>
   </div>;
 export default App;
