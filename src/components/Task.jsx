@@ -1,5 +1,10 @@
 import React from 'react';
 
-const Task = ({ task }) => <h1>{task.title}</h1>;
+import './Task.css';
+
+const Task = ({ task }) =>
+<div className=".task-container">
+  {task.title}
+</div>;
 
 export default Task;
