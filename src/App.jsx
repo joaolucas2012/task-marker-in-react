@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -46,15 +47,17 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-      <Header />
-      <AddTask handleTaskAddition={handleTaskAddition}/>
-      <Tasks
-        tasks={tasks}
-        handleTaskClick={handleTaskClick}
-        handleTaskDeletion={handleTaskDeletion}
-      />
-    </div>
+    <Router>
+      <div className="container">
+        <Header />
+        <AddTask handleTaskAddition={handleTaskAddition}/>
+        <Tasks
+          tasks={tasks}
+          handleTaskClick={handleTaskClick}
+          handleTaskDeletion={handleTaskDeletion}
+          />
+      </div>
+    </Router>
   );
 };
 
