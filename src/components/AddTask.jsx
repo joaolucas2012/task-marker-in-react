@@ -5,7 +5,9 @@ const AddTask = () =>
   (
     <div className="add-task-container">
       <input type="text" className="add-task-input" placeholder="Type a task"/>
-      <Button>Add</Button>
+      <div className="add-task-button-container">
+        <Button>Add</Button>
+      </div>
     </div>
   );
 
