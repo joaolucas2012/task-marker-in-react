@@ -55,7 +55,7 @@ const App = () => {
           tasks={tasks}
           handleTaskClick={handleTaskClick}
           handleTaskDeletion={handleTaskDeletion}
-          />
+        />
       </div>
     </Router>
   );

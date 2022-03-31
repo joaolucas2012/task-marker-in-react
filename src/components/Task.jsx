@@ -3,10 +3,10 @@ import { CgClose, CgInfo } from 'react-icons/cg';
 
 import './Task.css';
 
-const Task = ({ task, handleTaskClick, handleTaskDeletion }) =>
-  (
+const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
+  return (
     <div
-      className=".task-container"
+      className="task-container"
       style={task.completed ? { borderLeft: '6px solid orangered' } : {}}
     >
       <div
@@ -37,5 +37,6 @@ const Task = ({ task, handleTaskClick, handleTaskDeletion }) =>
 
     </div>
   );
+};
 
 export default Task;
