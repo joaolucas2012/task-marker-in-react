@@ -1,15 +1,18 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
+import './TaskDetails.css';
 import Button from "./Button";
 
 const TaskDetails = () => {
+  const params = useParams();
   return (
     <>
       <div className="back-button-container">
         <Button>Back</Button>
       </div>
       <div className="task-details-container">
-        <p></p>
+        <h2>{params.taskTitle}</h2>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
           eos voluptate corporis quas consectetur officiis iusto, vel, dolorum
