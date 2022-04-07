@@ -9,8 +9,9 @@
   font-weight: bold;
   cursor: pointer;
   border:none;
+  transition: all 0.5s ease;
 }
 
 .add-task-btn:hover{
-  background-color: #f65211;
+  background-color: orange;
 }

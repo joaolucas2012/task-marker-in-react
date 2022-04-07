@@ -8,14 +8,14 @@ const TaskDetails = () => {
   const params = useParams();
   const navigate = useNavigate();
 
-  const handleBackButton = () => {
+  const handleBackButtonClick = () => {
     navigate("/");
   };
 
   return (
     <>
       <div className="back-button-container">
-        <Button type="button" onClick={handleBackButton}>
+        <Button type="button" onClick={handleBackButtonClick}>
           Back
         </Button>
       </div>
