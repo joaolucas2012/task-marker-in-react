@@ -21,6 +21,12 @@
   color: orangered;
 }
 
+.buttons-container{
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .buttons-container button:hover{
   color: #eee;
   cursor: pointer;

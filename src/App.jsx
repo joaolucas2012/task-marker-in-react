@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
 import TaskDetails from "./components/TaskDetails";
@@ -14,18 +14,31 @@ const App = () => {
     {
       id: "1",
       title: "Post something on Instagram",
-      isCompleted: false,
+      completed: false,
     },
     {
       id: "2",
       title: "Learn React",
-      isCompleted: true,
+      completed: true,
     },
   ]);
 
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const { data } = await axios.get(
+        "https://jsonplaceholder.cypress.io/todos?_limit=10"
+      );
+
+      setTasks(data);
+    };
+
+    fetchTasks();
+  }, []);
+
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
-      if (task.id === taskId) return { ...task, isCompleted: !task.isCompleted };
+      if (task.id === taskId)
+        return { ...task, completed: !task.completed };
       return task;
     });
     setTasks(newTasks);
@@ -37,7 +50,7 @@ const App = () => {
       {
         title: taskTitle,
         id: uuidv4(),
-        isCompleted: false,
+        completed: false,
       },
     ];
 
@@ -69,7 +82,7 @@ const App = () => {
               </>
             }
           />
-          <Route path="/:taskTitle" exact element={<TaskDetails/>} />
+          <Route path="/:taskTitle" exact element={<TaskDetails />} />
         </Routes>
       </div>
     </Router>

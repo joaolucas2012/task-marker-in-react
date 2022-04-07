@@ -15,7 +15,7 @@ const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
     <div
       className="task-container"
       style={
-        task.isCompleted ? { color: "#444", backgroundColor: "chartreuse" } : {}
+        task.completed ? { color: "#444", backgroundColor: "chartreuse" } : {}
       }
     >
       <div
@@ -29,7 +29,7 @@ const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
       <div className="buttons-container">
         <button
           className={
-            task.isCompleted 
+            task.completed 
               ? "task-completed-button__style" 
               : "remove-task-btn"
           }
@@ -40,7 +40,7 @@ const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
         </button>
         <button
           className={
-            task.isCompleted
+            task.completed
               ? "task-completed-button__style"
               : "see-task-details-btn"
           }
