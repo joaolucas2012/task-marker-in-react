@@ -1,6 +1,6 @@
 .add-task-btn{
   background-color: orangered;
-  height: 40px;
+  height: 35px;
   padding: 0 10px;
   border-radius: 5px;
   width: 100%;
@@ -9,4 +9,8 @@
   font-weight: bold;
   cursor: pointer;
   border:none;
+}
+
+.add-task-btn:hover{
+  background-color: #f65211;
 }

@@ -1,13 +1,15 @@
-import React from 'react';
-import { CgClose, CgInfo } from 'react-icons/cg';
+import React from "react";
+import { CgClose, CgInfo } from "react-icons/cg";
 
-import './Task.css';
+import "./Task.css";
 
 const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
   return (
     <div
       className="task-container"
-      style={task.completed ? { color: '#444', backgroundColor: 'chartreuse' } : {}}
+      style={
+        task.isCompleted ? { color: "#444", backgroundColor: "chartreuse" } : {}
+      }
     >
       <div
         className="task-title"
@@ -19,22 +21,27 @@ const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
 
       <div className="buttons-container">
         <button
-          className="remove-task-btn"
+          className={
+            task.isCompleted 
+              ? "task-completed-button__style" 
+              : "remove-task-btn"
+          }
           type="button"
           onClick={() => handleTaskDeletion(task.id)}
         >
           <CgClose />
         </button>
-      </div>
-      <div className="buttons-container">
         <button
-          className="see-task-details-btn"
+          className={
+            task.isCompleted
+              ? "task-completed-button__style"
+              : "see-task-details-btn"
+          }
           type="button"
         >
           <CgInfo />
         </button>
       </div>
-
     </div>
   );
 };

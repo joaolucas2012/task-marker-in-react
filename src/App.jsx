@@ -13,19 +13,19 @@ const App = () => {
   const [tasks, setTasks] = useState([
     {
       id: "1",
-      name: "Post something on Instagram",
+      title: "Post something on Instagram",
       isCompleted: false,
     },
     {
       id: "2",
-      name: "Learn React",
+      title: "Learn React",
       isCompleted: true,
     },
   ]);
 
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
-      if (task.id === taskId) return { ...task, completed: !task.completed };
+      if (task.id === taskId) return { ...task, isCompleted: !task.isCompleted };
       return task;
     });
     setTasks(newTasks);
@@ -37,7 +37,7 @@ const App = () => {
       {
         title: taskTitle,
         id: uuidv4(),
-        completed: false,
+        isCompleted: false,
       },
     ];
 
