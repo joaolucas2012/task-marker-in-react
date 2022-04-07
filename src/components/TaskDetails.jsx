@@ -1,23 +1,29 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
-import './TaskDetails.css';
+import "./TaskDetails.css";
 import Button from "./Button";
 
 const TaskDetails = () => {
   const params = useParams();
+  const navigate = useNavigate();
+
+  const handleBackButton = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <div className="back-button-container">
-        <Button>Back</Button>
+        <Button type="button" onClick={handleBackButton}>
+          Back
+        </Button>
       </div>
       <div className="task-details-container">
         <h2>{params.taskTitle}</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-          eos voluptate corporis quas consectetur officiis iusto, vel, dolorum
-          pariatur delectus ipsum, illo laudantium veritatis aliquid adipisci
-          perspiciatis in nihil aliquam.
+          I have to {params.taskTitle} as faster as I can! This is a great
+          responsibility and I should pay attention to it before is too late.
         </p>
       </div>
     </>
